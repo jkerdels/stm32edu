@@ -1,0 +1,23 @@
+/*
+ * Dieses kleine Projekt dient dem Zweck, den Umgang mit einem 
+ * STM32 Cortex M4 Mikrocontroller zu illustrieren. Es wird hierbei
+ * bewusst auf die Verwendung der üblichen Libraries verzichtet, um
+ * möglichst wenig von der eigentlichen Vorgehensweise zu "verdecken".
+ * Es geht hierbei nicht darum, mit möglichst wenig Aufwand "das Ding
+ * ans Laufen zu kriegen", sondern ein grundlegendes Verständnis über
+ * die Funktionsweise des M4 zu erlangen.
+ *
+ * Benötigte Dokumente:
+ *  [1] RM0090 Reference Manual             (DM00031020.pdf)
+ *  [2] STM32F405xx/STM32F407xx datasheet   (DM00037051.pdf)
+ *
+ *  Falls das STM32F4 discovery board genutzt wird:
+ *  [3] UM1472 User Manual                  (DM00039084.pdf)
+ *
+ * Autor:  J. Kerdels 
+ * Lizenz: CC BY 3.0
+ *
+ * Die Lizenz gilt nicht für die "stm32-Dateien" startup_stm32f4xx.s, stm32_flash.ld
+ * sowie für alle Dateien im Verzeichnis libfoo. 
+ *
+ */
