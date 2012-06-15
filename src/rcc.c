@@ -121,19 +121,19 @@ Bit 1 nur lesend zugreifen. */
 // warten bis HSI stabil läuft
 while ((*RCC_CR & 0x00000002) == 0);
 
+
+/* Für Schritte drei und vier benötigen wir ein weiteres Register: das RCC clock 
+configuration register (RCC_CFGR). Es hat einen Address-Offset von 0x08 und 
+wird damit wie folgt definiert.   */
+
 volatile uint32_t *RCC_CFGR = (uint32_t*)(RCC_BASE + 0x08);
 
 /* Die Dokumentation dieses Registers findet sich auf Seite 97. Um die SYSCLK
 auf HSI zu stellen, müssen in diesem Register die Bits 0 + 1 auf 0 gesetzt
 werden. Um zu melden, dass das Umschalten der SYSCLK auf HSI erfolgreich
 war, werden die Bits 2 + 3 des RCC_CFGR Registers von der Hardware auf 0
-gesetzt. Damit ergibt sich also der folgende Programmablauf für die zuvor
-beschriebenen vier Schritte: */
-
-/* Für Schritte drei und vier benötigen wir ein weiteres Register: das RCC clock 
-configuration register (RCC_CFGR). Es hat einen Address-Offset von 0x08 und 
-wird damit wie folgt definiert.   */
-
+gesetzt. Damit ergibt sich für die letzten beiden Schritte also der folgende 
+Programmablauf: */
 
 // SYSCLK auf HSI stellen
 *RCC_CFGR &= 0xFFFFFFFC;
