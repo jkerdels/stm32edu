@@ -17,12 +17,12 @@ Schritte erfolgen und in diesem Rahmen die interne Taktung des M4
 beschreiben. Es ist hilfreich, sich nun Abbildung 9 auf Seite 85 des
 Reference Manuals [1] zur Hand zu nehmen.
 
-Die zentralen Komponenten des STM32 Cortex M4 können über drei 
+Die zentralen Komponenten des STM32 Cortex M4 können Über drei 
 verschiedene Taktquellen mit einem Takt versorgt werden. Der sogenannte
 Systemtakt wird hierbei als SYSCLK bezeichnet. In Abb. 9 findet man den 
 Ursprung der SYSCLK etwa in der Mitte des Diagramms. Darunter findet 
 sich die Anmerkung, dass die SYSCLK mit maximal 168 MHz betrieben 
-werden kann. Links daneben ist ein Multiplexer eingezeichnet, über den 
+werden kann. Links daneben ist ein Multiplexer eingezeichnet, Über den 
 eine der zur Verfügung stehenden Taktquellen ausgewählt werden kann.
 Diese sind mit HSI, HSE und PLLCLK bezeichnet.
 
@@ -318,6 +318,7 @@ while ((*RCC_CR & 0x02000000) == 0);
 
 // warten bis die SYSCLK umgestellt ist (Bits 2 und 3 müssen 10 werden)
 while ((*RCC_CFGR & 0x0000000C) != 0x00000008);
+
 
 /* Damit ist die Konfiguration des Clock-Trees abgeschlossen und das System
 läuft nun mit 168 MHz! */
